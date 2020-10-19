@@ -1,5 +1,5 @@
 """
-WSGI config for autodata_mw project.
+WSGI config for sa_mw project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'autodata_mw.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sa_mw.settings')
 
 application = get_wsgi_application()

@@ -1,5 +1,5 @@
 """
-ASGI config for autodata_mw project.
+ASGI config for sa_mw project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'autodata_mw.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sa_mw.settings')
 
 application = get_asgi_application()
