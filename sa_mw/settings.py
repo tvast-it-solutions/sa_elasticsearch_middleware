@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'core',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
