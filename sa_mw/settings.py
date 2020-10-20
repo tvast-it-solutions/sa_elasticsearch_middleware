@@ -30,6 +30,8 @@ ALLOWED_HOSTS = ['*']
 DESTINATION_HOST = 'http://3.7.187.244:9200'
 
 # Application definition
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -45,6 +47,7 @@ INSTALLED_APPS = [
     'rest_auth.registration',
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
     'core',
     'drf_yasg',
 ]
@@ -85,15 +88,21 @@ WSGI_APPLICATION = 'sa_mw.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'elast1',
-        'USER': 'tvsadmn',
-        'PASSWORD': 'passwordtvst',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
+"""
+'default': {
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'NAME': 'elast1',
+    'USER': 'tvsadmn',
+    'PASSWORD': 'passwordtvst',
+    'HOST': 'localhost',
+    'PORT': '5432',
+},
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
