@@ -43,6 +43,7 @@ def login_view(request):
                 {
                     'key': token.key,
                     'email': user.email,
+                    'userType': user.userType,
                 },
                 status=status.HTTP_200_OK,
             )
@@ -57,5 +58,6 @@ urlpatterns = [
     path('auth/login/', login_view),
     path('auth/', include('rest_auth.urls')),
     path('auth/registration/', include('rest_auth.registration.urls')),
-    path('', include('core.urls'))
+    path('', include('core.urls')),
+    path('users/', include('users.urls')),
 ]
