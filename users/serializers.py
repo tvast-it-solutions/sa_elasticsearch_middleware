@@ -10,7 +10,7 @@ from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
 
 User = get_user_model()
-UserType = ['AD', 'AN']
+UserType = ['Admin', 'Analyst']
 
 class CustomRegisterSerializer(RegisterSerializer):
     userType = serializers.CharField(max_length=50, required=True)
