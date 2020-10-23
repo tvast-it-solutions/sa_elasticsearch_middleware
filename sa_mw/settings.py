@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-DESTINATION_HOST = 'http://3.7.187.244:9200'
+DESTINATION_HOST = 'http://10.0.5.68'
 
 # Application definition
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
