@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'core',
     'drf_yasg',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -89,28 +90,20 @@ WSGI_APPLICATION = 'sa_mw.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'elast1',
-        'USER': 'tvsadmn',
+        'NAME': 'elast2',
+        'USER': 'tvsadmn2',
         'PASSWORD': 'passwordtvst',
         'HOST': 'localhost',
         'PORT': '5432',
     },
 }
 
-"""
-'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-'default': {
-    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': 'elast1',
-    'USER': 'tvsadmn',
-    'PASSWORD': 'passwordtvst',
-    'HOST': 'localhost',
-    'PORT': '5432',
-},
-"""
+
+# 'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -155,3 +148,9 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ]
 }
+
+AUTH_USER_MODEL = 'users.CustomUser'
+REST_AUTH_REGISTER_SERIALIZERS = {
+    'REGISTER_SERIALIZER': 'users.serializers.CustomRegisterSerializer',
+}
+ACCOUNT_ADAPTER = 'users.adapter.CustomAccountAdapter'
